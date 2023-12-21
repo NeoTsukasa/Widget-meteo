@@ -1,3 +1,26 @@
-.MeteoCard {
-    width: 20vh;
+.meteoCard {
+    width: 40%;
+    background-color: rgb(54, 181, 223);
+    border: 5px solid rgb(255, 255, 255, 0.5);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.cityName {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.cityTemp {
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.info {
+    width: 70%;
+    margin-top: auto;
+    margin-bottom: auto;
 }

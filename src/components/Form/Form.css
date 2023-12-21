@@ -1,0 +1,11 @@
+.addNew {
+    margin-bottom: 2rem;
+}
+
+input {
+    margin-bottom: 1rem;
+}
+
+.error {
+    font-weight: bolder;
+}

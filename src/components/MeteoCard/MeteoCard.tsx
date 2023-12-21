@@ -7,8 +7,10 @@ function MeteoCard ({city}) {
     const [cityTemp, setCityTemp] = useState(0)
     const [tempIcon, setTempIcon] = useState('')
 
+    const key = import.meta.env.VITE_OPENWEATHER_API_URL
+
     useEffect(() => {
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${city},fr&appid=aba1540d3845e1b041b4dbde28c2e286&units=metric`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${city},fr&appid=${key}&units=metric`)
           .then((response) => {
             setCityName(response.data.name)
             setCityTemp(Math.round(response.data.main.temp))
@@ -18,10 +20,14 @@ function MeteoCard ({city}) {
 
     return (
         <div className='meteoCard'>
-            <div className="cityName">{cityName}</div>
-            <div className="CityCode">{city}</div>
-            <div className="CityTemp">{cityTemp}°C</div>
-            <img src={`http://openweathermap.org/img/wn/${tempIcon}@2x.png`} />
+            <div className="info">
+                <div className="cityName">{cityName}</div>
+                <div className="cityCode">{city}</div>
+            </div>
+            <div className="temp">
+                <img src={`http://openweathermap.org/img/wn/${tempIcon}@2x.png`} />
+                <div className="cityTemp">{cityTemp}°C</div>
+            </div>
         </div>
     )
 }
