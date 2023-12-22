@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import './MeteoCard.css'
 
-function MeteoCard ({city}) {
+function MeteoCard ({city}: any) {
     const [cityName, setCityName] = useState('')
     const [cityTemp, setCityTemp] = useState(0)
     const [tempIcon, setTempIcon] = useState('')

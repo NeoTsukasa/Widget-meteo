@@ -2,16 +2,20 @@ import axios from "axios";
 import { useState } from "react";
 import './Form.css'
 
-function Form ({setCities, cities}) {
+interface IpropsValue {
+  setCities: React.Dispatch<React.SetStateAction<number[]>>,
+  cities: number[]
+}
+function Form ({setCities, cities} : IpropsValue) {
     const [newCP, setNewCP] = useState(0);
     const [error, setError] = useState('')
     const key = import.meta.env.VITE_OPENWEATHER_API_URL
 
-    const handleChange = (event) => {
+    const handleChange = (event : any) => {
       setNewCP(event.target.value);
     };
   
-    const searchCP = (event) => {
+    const searchCP = (event : any) => {
       event.preventDefault();
       
         if (cities.includes(newCP)) { setError('La ville est déjà présente !')}
